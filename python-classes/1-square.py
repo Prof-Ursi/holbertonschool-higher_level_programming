@@ -13,7 +13,7 @@ class Square:
         Create a new square instance,
         with a private instance attribute : size
 
-        Arguments :
+        Attributes :
             size (int): The size of the square
         """
         self.__size = size
