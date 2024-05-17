@@ -33,8 +33,25 @@ class Square:
             __size (int): The size of the square
 
             __position (int, int): the position of the square
+
+        Raises :
+            TypeError :
+                - If 'size' type is not 'int'
+                - if the value is not a tuple of 2 positive integers.
+
+            ValueError : If 'size' value is strictly less than 0.
         """
-        self.__size = size
+        if type(size) is not int:
+            raise TypeError('size must be an integer')
+        elif size < 0:
+            raise ValueError('size must be >= 0')
+        else:
+            self.__size = size
+
+        if not isinstance(position, tuple)\
+           or len(position) != 2\
+           or not all(isinstance(i, int) and i >= 0 for i in position):
+            raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = position
 
     @property
@@ -88,12 +105,9 @@ class Square:
         Raises
             TypeError: if the value is not a tuple of 2 positive integers.
           """
-        if (type(value) is not tuple)\
-                or (len(value) != 2)\
-                or (type(value[0]) is not int)\
-                or (type(value[1]) is not int)\
-                or (value[0] < 0)\
-                or (value[1] < 0):
+        if not isinstance(value, tuple)\
+           or len(value) != 2\
+           or not all(isinstance(i, int) and i >= 0 for i in value):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
