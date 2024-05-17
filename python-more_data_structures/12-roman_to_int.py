@@ -1,9 +1,10 @@
 #!/usr/bin/python3
+
 def roman_to_int(roman_string):
     if roman_string is None or not isinstance(roman_string, str):
         return 0
 
-    roman_numbers = {
+    roman_numbers_dictionary = {
         "I": 1,
         "V": 5,
         "X": 10,
@@ -17,7 +18,7 @@ def roman_to_int(roman_string):
     roman_character = 'I'
 
     for roman_character in roman_string:
-        roman_current = roman_numbers.get(roman_character, 0)
+        roman_current = roman_numbers_dictionary.get(roman_character, 0)
         if roman_current > roman_previous:
             roman_converted += roman_current - 2 * roman_previous
         else:
