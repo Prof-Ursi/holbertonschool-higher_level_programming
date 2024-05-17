@@ -8,6 +8,7 @@ This class is used to cast squares.
 
 
 class Square:
+    """Defines a square class"""
     def __init__(self, size=0):
         """
         Create a new square instance,
@@ -24,6 +25,7 @@ class Square:
         """
         if type(size) is not int:
             raise TypeError('size must be an integer')
-        if size < 0:
+        elif size < 0:
             raise ValueError('size must be >= 0')
-        self.__size = size
+        else:
+            self.__size = size
