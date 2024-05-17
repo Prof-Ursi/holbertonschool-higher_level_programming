@@ -16,7 +16,7 @@ class Square:
         Attributes :
             size (int): The size of the square
 
-        Raises : 
+        Raises :
             TypeError : If 'size' type is not 'int'.
 
             ValueError : If 'size' value is strictly less than 0.
