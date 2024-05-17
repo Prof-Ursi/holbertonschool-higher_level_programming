@@ -8,6 +8,7 @@ This class is used to cast squares.
 
 
 class Square:
+    """Defines a square class"""
     def __init__(self, size):
         """
         Create a new square instance,
