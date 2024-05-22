@@ -1,0 +1,212 @@
+===============================
+0. Integer Addition Test
+===============================
+
+This is a doctest file designed to test the 'add_integer' function in Python. 
+It provides both correct and incorrect cases on how to use this function.
+
+Import module : 
+===============
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Description :
+=============
+    Function that adds 2 integers. 
+
+Requirements : 
+==============
+    - a and b must be integers or floats, otherwise raise a 'TypeError' exception 
+    with the message "a must be an integer" or "b must be an integer"
+    - a and b must be first casted to integers if they are float
+    - Returns an integer: the addition of a and b
+
+
+Correct Cases to Test :
+=======================
+
+Int + Int :
+    >>> add_integer(1, 2)
+    3
+
+Int + Zero :
+    >>> add_integer(42, 0)
+    42
+
+Int + Float :
+    >>> add_integer(3, 4.7)
+    7
+
+Float + Int :
+    >>> add_integer(5.3, 6)
+    11
+
+Float + Float :
+    >>> add_integer(7.9, 8.2)
+    15
+
+
+Negative Int + Int :
+    >>> add_integer(-9, 1)
+    -8
+
+Int + Negative Int :
+    >>> add_integer(7, -12)
+    -5
+
+Negative Int + Negative Int :
+    >>> add_integer(-8, -24)
+    -32
+
+Negative Float + Float :
+    >>> add_integer(-4.5, 12.8)
+    8
+
+Float + Negative Float :
+    >>> add_integer(58.7, -59)
+    -1
+
+Negative Float + Negative Float :
+    >>> add_integer(-42.8, -69.1)
+    -111
+
+
+Negative Int + Float :
+    >>> add_integer(-12, 45.692)
+    33
+
+Float + Negative Int :
+    >>> add_integer(25.12453689756, -5)
+    20
+
+Negative Float + Int :
+    >>> add_integer(-1.23456789, 111)
+    110
+
+Int + Negative Float :
+    >>> add_integer(100, -10.111111)
+    90
+
+Negative Int + Negative Float :
+    >>> add_integer(-9, -9.9999999)
+    -18
+
+Negative Float + Negative Int :
+    >>> add_integer(-123.456789, 987)
+    864
+
+
+
+Int + default value of b :
+    >>> add_integer(1)
+    99
+
+Float + default value of b :
+    >>> add_integer(1.1, )
+    99
+
+
+Incorrect Cases to test:
+========================
+
+No parameter:
+    >>> add_integer()
+    Traceback (most recent call last):
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Missing first parameter:
+    >>> add_integer(, 1)
+    Traceback (most recent call last):
+    SyntaxError: invalid syntax
+
+First argument with no assigned value : 
+    >>> add_integer(a, 1)
+    Traceback (most recent call last):
+    NameError: name 'a' is not defined
+
+Complex Number as a parameter :
+    >>> add_integer(3j, 1)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(1, 3j)
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    >>> add_integer(3j, 3j)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+Boolean as a parameter : 
+    >>> add_integer(True, 1)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(1, True)
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    >>> add_integer(True, True)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+String as a parameter :
+    >>> add_integer('Hello', 1)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(1, 'Hello')
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    >>> add_integer('Hello', 'Hello')
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+None as a parameter:
+    >>> add_integer(None, 1)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(1, None)
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    >>> add_integer(None, None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+List as a parameter: 
+    >>> add_integer([1, 1], 1)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(1, [1, 1])
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    >>> add_integer([1, 1], [1, 1])
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+Overflow with big integer :
+    >>> add_integer(5, 1e500)
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(5, -1e500)
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+Overflow with 'Inf' :
+    >>> add_integer(float('inf'), 3)
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+Not a Number :
+    >>> add_integer(float('nan'), 3)
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
+
+Return Type : 
+    >>> type(add_integer(5, 5))
+    <class 'int'>
