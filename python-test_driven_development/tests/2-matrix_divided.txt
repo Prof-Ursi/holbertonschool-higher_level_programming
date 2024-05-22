@@ -52,6 +52,11 @@ Division by zero :
     Traceback (most recent call last):
     ZeroDivisionError: division by zero
 
+Everything is zero : 
+    >>> matrix_divided(0, 0)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
 Char in the matrix : 
     >>> matrix_divided([[1, 2], [3, '4']], 2)
     Traceback (most recent call last):
