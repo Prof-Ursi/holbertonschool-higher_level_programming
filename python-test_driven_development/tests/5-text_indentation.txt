@@ -1,0 +1,87 @@
+===============================
+5. Text Indentation Test
+===============================
+
+This is a doctest file designed to test the text_indentation(text) function in Python. 
+It provides both correct and incorrect cases on how to use this function.
+
+Import module : 
+===============
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Description :
+=============
+    Function that prints a text with 2 new lines after each of these characters: '.', '?' and ':'
+
+Requirements : 
+==============
+    - text must be a string, otherwise raise a TypeError exception
+    with the message "text must be a string"
+    - There should be no space at the beginning or at the end
+    of each printed line
+
+Correct Cases to Test :
+=======================
+
+Regular input :
+    >>> text_indentation("Hello. How are you? I am fine: thanks.")
+    Hello.
+    <BLANKLINE>
+    How are you?
+    <BLANKLINE>
+    I am fine:
+    <BLANKLINE>
+    thanks.
+    <BLANKLINE>
+
+Input with no special character :
+    >>> text_indentation("No special chars here")
+    No special chars here
+
+Simple sentence ended with a dot :
+    >>> text_indentation("End with a dot.")
+    End with a dot.
+    <BLANKLINE>
+
+LOTS of dots : 
+    >>> text_indentation("Multiple...dots...here.")
+    Multiple.
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    dots.
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    here.
+    <BLANKLINE>
+
+Empty string : 
+    >>> text_indentation("")
+
+A lot of spaces : 
+    >>> text_indentation("   Leading and trailing spaces.   ")
+    Leading and trailing spaces.
+    <BLANKLINE>
+
+Incorrect Cases to test :
+=========================
+
+Number instead of a string : 
+    >>> text_indentation(12345)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+None as an input : 
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+List as an input :
+    >>> text_indentation(["This", "is", "a", "list"])
+    Traceback (most recent call last):
+    TypeError: text must be a string
