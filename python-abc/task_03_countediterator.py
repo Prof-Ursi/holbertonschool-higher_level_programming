@@ -28,8 +28,11 @@ class CountedIterator:
         Returns:
             The next item from the iterable.
         """
-        self.count += 1
-        return next(self.iterator)
+        try :
+            self.count += 1
+            return next(self.iterator)
+        except StopIteration:
+            raise
 
     def get_count(self):
         """
