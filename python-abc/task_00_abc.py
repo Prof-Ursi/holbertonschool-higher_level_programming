@@ -1,4 +1,7 @@
+#!/usr/bin/python3
+
 from abc import ABC, abstractmethod
+
 
 class Animal(ABC):
     """
@@ -13,6 +16,7 @@ class Animal(ABC):
         """
         pass
 
+
 class Dog(Animal):
     """
     Concrete subclass of Animal representing a dog.
@@ -24,6 +28,7 @@ class Dog(Animal):
         Returns the string "Bark".
         """
         return "Bark"
+
 
 class Cat(Animal):
     """
