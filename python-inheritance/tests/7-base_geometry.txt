@@ -29,11 +29,11 @@ Empty area():
 Empty or missing argument base_geometry module:-
     >>> base_geometry.integer_validator()
     Traceback (most recent call last):
-    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
     >>> base_geometry.integer_validator("age")
     Traceback (most recent call last):
-    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
 
 None value:
     >>> base_geometry.integer_validator("age", None)
