@@ -29,10 +29,7 @@ class CountedIterator:
             The next item from the iterable.
         """
         self.count += 1
-        try:
-            return next(self.iterator)
-        except StopIteration:
-            raise StopIteration
+        return next(self.iterator)
 
     def get_count(self):
         """
