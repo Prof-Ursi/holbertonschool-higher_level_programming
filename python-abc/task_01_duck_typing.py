@@ -40,15 +40,7 @@ class Circle(Shape):
 
         Args :
             radius (float, int): the radius of the circle.
-
-        Raises:
-            TypeError: If radius is neither a float nor an integer.
-            ValueError: If radius is less than 0.
         """
-        if not isinstance(radius, (float, int)):
-            raise TypeError("radius must be either an integer or a float")
-        if radius < 0:
-            raise ValueError("radius must be a positive number.")
         self.radius = radius
 
     def area(self):
@@ -81,22 +73,8 @@ class Rectangle(Shape):
         Args :
             - width (float, int): The width of the rectangle.
             - height (float, int): The height of the rectangle.
-
-        Raises:
-            - TypeError: If either height or width is
-            neither a float nor an integer.
-            - ValueError: If either height or width is less than 0.
         """
-        if not isinstance(height, (float, int)):
-            raise TypeError("height must be either an integer or a float")
-        if height < 0:
-            raise ValueError("height must be >= 0")
         self.height = height
-
-        if not isinstance(width, (float, int)):
-            raise TypeError("width must be either an integer or a float")
-        if width < 0:
-            raise ValueError("width must be >= 0")
         self.width = width
 
     def area(self):
