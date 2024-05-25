@@ -43,11 +43,12 @@ class CountedIterator:
         Returns:
             The next item from the iterable.
         """
-        try :
+        try:
             self.count += 1
             return next(self.iterator)
         except StopIteration:
             raise StopIteration
+
 
 data = [1, 2, 3, 4]
 counted_iter = CountedIterator(data)
