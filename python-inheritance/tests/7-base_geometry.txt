@@ -1,0 +1,74 @@
+==================================================
+7. Base Geometry Test
+==================================================
+
+This is a doctest file designed to test the BaseGeometry class modules in Python. 
+It provides both correct and incorrect cases to test with this module.
+
+Import file:
+============
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> base_geometry = BaseGeometry()
+
+
+Correct Cases to Test :
+=======================
+
+Regular argument:
+    >>> base_geometry.integer_validator("age", 38)
+
+
+Incorrect Cases to Test :
+=========================
+
+Empty area():
+    >>> base_geometry.area()
+    Traceback (most recent call last):
+    Exception: area() is not implemented
+
+Empty or missing argument base_geometry module:-
+    >>> base_geometry.integer_validator()
+    Traceback (most recent call last):
+    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+    >>> base_geometry.integer_validator("age")
+    Traceback (most recent call last):
+    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+None value:
+    >>> base_geometry.integer_validator("age", None)
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
+
+
+
+0 or negative value:
+    >>> base_geometry.integer_validator("age", 0)
+    Traceback (most recent call last):
+    ValueError: age must be greater than 0
+
+    >>> base_geometry.integer_validator("age", -38)
+    Traceback (most recent call last):
+    ValueError: age must be greater than 0
+
+Non Integer values:
+    >>> base_geometry.integer_validator("age", "38")
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
+    >>> base_geometry.integer_validator("age", [38])
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
+    >>> base_geometry.integer_validator("age", (38, 40))
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
+    >>> base_geometry.integer_validator("age", {38, 40})
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
+    >>> base_geometry.integer_validator("age", True)
+    Traceback (most recent call last):
+    TypeError: age must be an integer
