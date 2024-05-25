@@ -39,3 +39,17 @@ class CountedIterator:
             int: The number of items iterated over.
         """
         return self.count
+
+#Testing Class
+if __name__ == "__main__":
+    data = [1, 2, 3, 4]
+    counted_iter = CountedIterator(data)
+    print("Iterating through items:")
+
+    try:
+        while True:
+            item = next(counted_iter)
+            count = counted_iter.get_count()
+            print(f"Got {item}, total {count} items iterated.")
+    except StopIteration:
+        print("No more items.")
