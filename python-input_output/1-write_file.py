@@ -15,8 +15,8 @@ def write_file(filename="", text=""):
         text (str): The text to write
 
     Returns :
-        number of characters written
+        number of characters written through the intern return
+        of the write() syscall.
     """
-    with open(filename, mode="w", encoding="utf-8") as file:
-        file.write(text)
-    return len(text)
+    with open(filename, mode="w", encoding="utf-8") as file:   
+        return file.write(text)
