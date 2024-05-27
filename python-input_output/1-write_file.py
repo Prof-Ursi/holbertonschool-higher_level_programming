@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+This module define a function that writes a string to a text files and
+returns the number of characters written.
+"""
+
 
 def write_file(filename="", text=""):
     """
