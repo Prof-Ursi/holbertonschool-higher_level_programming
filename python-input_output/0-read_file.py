@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+This module defines a function that reads a text file and prints it.
+"""
+
 
 def read_file(filename=""):
     """
