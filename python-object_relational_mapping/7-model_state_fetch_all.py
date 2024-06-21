@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Script that lists all 'State' objects from the database `hbtn_0e_6_usa`.
+Script that lists all 'State' objects from the database 'hbtn_0e_6_usa'.
 """
 
 from sqlalchemy import create_engine
