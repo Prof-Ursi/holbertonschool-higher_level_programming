@@ -16,10 +16,8 @@ if __name__ == "__main__":
         db=sys.argv[3]
     )
     cursor = db.cursor()
-    cursor.execute(
-        "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC;")
-    rows = cursor.fetchall()
-    for row in rows:
+    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%'")
+    for row in cursor.fetchall():
         print(row)
     cursor.close()
     db.close()
